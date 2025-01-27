@@ -1,0 +1,3 @@
+[submodule "src/bitgesell"]
+	path = src/bitgesell
+	url = https://github.com/BitgesellOfficial/bitgesell.git
