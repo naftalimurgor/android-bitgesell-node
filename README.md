@@ -24,9 +24,9 @@ OR:
 
 ## Building
 
-First you need to build the bitcoin-core binaries for Android. Among common build dependencies you'll need Android Toolchain. Get an Android Studio and download the toolchain using SDK Manager.
+First you need to build the bitgesell-core binaries for Android. Among common build dependencies you'll need Android Toolchain. Get an Android Studio and download the toolchain using SDK Manager.
 
-First you need to build bitcoin dependencies:
+First you need to build bitgesell dependencies:
 * Apply [this commit](https://github.com/autoconf-archive/autoconf-archive/pull/211/commits/0087595e99c8bb9a41f5c05a426b453c8d4d931c) to ./build-aux/m4/ax_boost_thread.m4.
 * Go to 'depends', read README. Choose you Android architecture (aarch64-linux-android and x86_64-linux-android are most common) and run something like:
 
@@ -39,10 +39,10 @@ make HOST=aarch64-linux-android
 
 ANDROID_API_LEVEL=28 ANDROID_TOOLCHAIN_BIN=/home/user/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin`
 ```
-- When depends are built, configure bitcoin core to use them:
+- When depends are built, configure bitgesell core to use them:
 
 ```sh
-./configure --host=aarch64-linux-android --disable-wallet --with-gui=no --prefix=/home/user/bitcoin/depends/aarch64-linux-android`
+./configure --host=aarch64-linux-android --disable-wallet --with-gui=no --prefix=/home/user/bitgesell/depends/aarch64-linux-android`
 ```
 
 - Then make. What you get is `BGLd` and BGL-cli compiled for your chosen arch.
@@ -59,7 +59,7 @@ NB: `libbitgesell.so` and `libbitgesell-cli` already exist for `arm64-v8a` arch 
 
 - Edit module level build.gradle's 'abiFilters' to only include the archs you compiled.
 
-- Build the project. The built apk should will now include your bitcoin core binaries.
+- Build the project. The built apk should will now include your bitgesell core binaries.
 
 ## Milestone 2
 
@@ -73,6 +73,6 @@ Fix a errors and sync the blockchain on Android device:
 
 2.This is work in progress and is being actively work on for improvement
 
-Credits: https://github.com/lndroid/BitcoinCoreAndroid
+Credits: https://github.com/lndroid/bitgesellCoreAndroid
 
 LICENCE: `MIT`
